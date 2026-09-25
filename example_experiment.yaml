@@ -1,0 +1,22 @@
+# Mat-Sim Agent — example experiment
+# Compares a metal (Aluminum) and a polymer (PLA) by specific stiffness (E/rho).
+name: demo_metal_vs_polymer
+question: "For a lightweight structural application requiring high stiffness-to-weight ratio, compare PLA polymer with Aluminum. Evaluate density, Young modulus E, and specific stiffness E/rho."
+objective: maximize
+metric: E_over_rho
+output: code_dir/demo_metal_vs_polymer.csv
+materials:
+  polymers:
+    - name: PLA
+      smiles: "CC(O)C(=O)O"
+      n_chains: 30
+      chain_length: 20
+      temperature_K: 300.0
+      properties: [density, modulus]
+  metals:
+    - name: Al
+      potential: "Al99.eam.alloy"
+      elements: "Al"
+      structure: fcc
+      lattice_guess: 4.05
+      properties: [lattice_constant, young_modulus]

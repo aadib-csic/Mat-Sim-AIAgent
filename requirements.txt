@@ -1,0 +1,17 @@
+# Core agent / orchestration
+langgraph>=0.2
+langchain-core>=0.3
+langchain-ollama>=0.2
+# Chemistry / topology
+rdkit>=2024.3
+parmed>=4.2
+# Scientific stack
+numpy>=1.26
+ase>=3.23
+# RAG / retrieval
+chromadb>=0.5
+sentence-transformers>=3.0
+rank-bm25>=0.2
+requests>=2.31
+# NOTE: LAMMPS and Amber/AmberTools are NOT pip-installable — provide them via
+# your environment (e.g. HPC modules). Ollama must run locally to serve the LLM.
